@@ -1,0 +1,23 @@
+server:
+  port: 9090
+  context-path: /kafka-demo
+
+test:
+  kafka:
+    sender:
+      serverAddress: 172.20.66.157:9092
+    topic:
+      consumer: mytest
+    client:
+      group: vg-debug
+      enableAutoCommit: false
+      autoCommitIntervalMS: 3000
+      sessionTimeoutMS: 15000
+      groupID: vg-debug-1
+      autoOffsetReset: earliest
+      maxPullSwitch: true
+      maxPullRecords: 500
+      concurrency: 1
+      pollTimeOut: 3000
+      requestTimeout: 50000
+      threadNum: 100
